@@ -1,22 +1,20 @@
-/* eslint-disable no-unused-vars */
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
 const userSchema = new mongoose.Schema({
   username: {
-    type :String,
+    type: String,
     minLength: 3,
-    unique : true
+    unique: true
   },
   name: String,
   passwordHash: String,
-  blog: [
+  blogs: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Blog'
     }
   ]
-
 })
 
 userSchema.set('toJSON', {

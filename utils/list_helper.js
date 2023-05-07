@@ -1,10 +1,11 @@
-/* eslint-disable no-unused-vars */
-const dummy = (blogs) => 1
-
 const maxBy = require('lodash/maxBy')
 const sumBy = require('lodash/sumBy')
 const groupBy = require('lodash/groupBy')
 const orderBy = require('lodash/orderBy')
+
+const dummy = (blogs) => {
+  return 1
+}
 
 const totalLikes = (blogs) => {
   const reducer = (sum, blog) => sum + blog.likes
