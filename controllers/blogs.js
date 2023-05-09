@@ -64,6 +64,7 @@ blogsRouter.put('/:id', async (request, response) => {
   response.json(updatedBlog)
 })
 
+
 blogsRouter.post('/', async (request, response) => {
   const { title, author, url, likes } = request.body
   const decodedToken = jwt.verify(request.token, process.env.JWT_SECRET)
@@ -78,6 +79,5 @@ blogsRouter.post('/', async (request, response) => {
   await user.save()
   response.status(201).json(savedBlog)
 })
-
 
 module.exports = blogsRouter
